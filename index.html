@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Weather Forecast</title>
+  <script src="scripts/jquery-3.6.0.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <div class="my_weather">
+    <span class="logo">MY WEATHER</span>
+    <!-- <textarea name="mycity" rows="1" cols="20" id="mycity"></textarea> -->
+    <input type="text" name="mycity" value="" id="mycity">
+  </div>
+  <div class="tab">
+    <nav class="tabs_items">
+      <a href="#tab01" class="tabs_items point">Today</a>
+      <a href="#tab02" class="tabs_items point">5-day forecast</a>
+    </nav>
+    <div class="tabs_body">
+      <div id="tab01" class="tabs_block">
+        <div class="current">
+          <h2 class="head_card"><span>CURRENT WEATHER</span><span class="current_data" id="current_data"></span></h2>
+          <div class="wrapper">
+            <div class="content main_wrapper">
+              <div class="icon" id="icon_current"></div>
+              <div class="main_current" id="main_current"></div>
+            </div>
+            <div class="wrapper_temperature content">
+              <div id="current_temperature" class="content"></div>
+              <div id="feels_like" class="content"></div>
+            </div>
+            <div id="light_time" class="content">
+              <p class="sunrise">Sunrise:&nbsp;&nbsp;&nbsp;&nbsp;<span class="data sunrise" id="sunrise"></span></p>
+              <p class="sunset">Sunset:&nbsp;&nbsp;&nbsp;&nbsp;<span class="data sunset" id="sunset"></span></p>
+              <p class="duration">Duration:&nbsp;&nbsp;&nbsp;&nbsp;<span class="data duration" id="duration"></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="hourly">
+          <h2 class="head_card">HOURLY</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>TODAY</th>
+                <th>7pm</th>
+                <th>8pm</th>
+                <th>9pm</th>
+                <th>10pm</th>
+                <th>11pm</th>
+                <th>12pm</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr></tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+              </tr>
+              <tr>
+                <td>Forecast</td>
+                <td id="forecast01"></td>
+                <td id="forecast02"></td>
+                <td id="forecast03"></td>
+                <td id="forecast04"></td>
+                <td id="forecast05"></td>
+                <td id="forecast06"></td>
+              </tr>
+              <tr>
+                <td>Temp (&deg;C)</td>
+                <td id="temp01"></td>
+                <td id="temp02"></td>
+                <td id="temp03"></td>
+                <td id="temp04"></td>
+                <td id="temp05"></td>
+                <td id="temp06"></td>
+              </tr>
+              <tr>
+                <td>RealFeel</td>
+                <td id="realfeel01"></td>
+                <td id="realfeel02"></td>
+                <td id="realfeel03"></td>
+                <td id="realfeel04"></td>
+                <td id="realfeel05"></td>
+                <td id="realfeel06"></td>
+              </tr>
+              <tr>
+                <td>Wind (km/h)</td>
+                <td id="wind01"></td>
+                <td id="wind02"></td>
+                <td id="wind03"></td>
+                <td id="wind04"></td>
+                <td id="wind05"></td>
+                <td id="wind06"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="nearby">
+          <h2 class="head_card">NEARBY PLACES</h2>
+        </div>
+      </div>
+      <div id="tab02" class="tabs_block">
+
+        <div class="day_list">
+          <div class="day_card" id="day01">
+            <h2 class="head_card"><span>TONIGHT</span></h2>
+            <div class="data" id="data"></div>
+            <div class="icon" id="icon"></div>
+            <div id="temperature" class="temperature"></div>
+            <div class="main" id="main"></div>
+          </div>
+        </div>
+
+        <div class="hourly">
+          <table>
+            <caption class="head_card">HOURLY</caption>
+            <thead>
+              <tr>
+                <th>SUNDAY</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr></tr>
+            </tfoot>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+                <td><span id="i1" class="icon"></span></td>
+              </tr>
+              <tr>
+                <td>Forecast</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Temp (&deg;C)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>RealFeel</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Wind (km/h)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/script.js" charset="utf-8"></script>
+  <script>
+    // let today = new Date();
+    //
+    // // if (navigator.geolocation) {
+    //   // Геолокация доступна
+    //   function success(pos) {
+    //     let crd = pos.coords;
+    //     getWeatherCoord(crd.latitude,crd.longitude);
+    //   };
+    //   // let options = {
+    //   //   enableHighAccuracy: true,
+    //   //   timeout: 5000,
+    //   //   maximumAge: 0
+    //   // };
+    //
+    //   function error(err) {
+    //     // console.warn(`ERROR(${err.code}): ${err.message}`);
+    //   };
+    //   navigator.geolocation.getCurrentPosition(success, error);
+    //   // , options);
+    // // } else {
+    // //   // Геолокация не доступна
+    // // }
+    //
+    // current_data.innerHTML = today.getDate() + "." + (today.getMonth() < 9 ? "0" : "") + (today.getMonth() + 1) + "." + today.getFullYear();
+  </script>
+</body>
+
+</html>
