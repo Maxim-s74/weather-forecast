@@ -1,0 +1,118 @@
+// out: ../css/main.css
+@import 'normalize';
+@import 'variables';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  height: 1hv;
+  width: 1wv;
+  background-color: #d7d7d7;
+}
+
+.my_weather {
+  font-size: 24px;
+  position: relative;
+  text-align: right;
+  height: 2em;
+  background-color: #f6f6f6;
+}
+
+.logo {
+  display: block;
+  position: absolute;
+  color: #009595;
+  font-size: var(--logo-fs);
+  font-weight: 900;
+  left: 0;
+  top: 50%;
+  transform: translate(10%,-50%);
+}
+
+#mycity {
+  position: absolute;
+  font-size: var(--city-fs);
+  border: solid 1px #404040;
+  right: 0;
+  top: 50%;
+  transform: translate(-10%,-50%);
+}
+
+nav {
+  display: block;
+  width: 100%;
+  font-size: var(--nave-fs);
+  background-color: #404040;
+  line-height: 2em;
+  padding-left:2%;
+  // height:1.5em;
+}
+
+.head_card{
+  color: #009595;
+  font-size: var(--hcard-fs);
+  font-weight: 900;
+  text-align:left;
+  display:flex;
+  justify-content:space-between;
+}
+.point{
+  color:#b3c9de;
+  height:100%;
+  padding:0.5em 1em;
+  border-spacing:0;
+  border-left:solid 1px #b3c9de;
+  border-right:solid 1px #b3c9de;
+  margin:0;
+}
+.point:active{
+  border-bottom:solid 1px #b3c9de;
+  border-bottom:solid 1px #009595;
+  font-weight:900;
+}
+
+
+.tabs_block {
+  padding: 20px;
+  font-size: 18px;
+  line-height: 24px;
+  display: none;
+}
+
+// today weather card
+.current .wrapper{
+  display:flex;
+  align-content:space-between;
+}
+
+// .icon{
+//   height:50px;
+//   width:50px;
+//   // background-size:cover;
+// }
+.wrapper_temperature{
+  margin:0 auto;
+}
+
+#current_temperature{
+  font-size: var(--main-t-fs);
+  font-weight: 900;
+}
+//===========================================================
+.hourly table{
+  width:100%;
+}
+
+
+
+
+
+// == Переключатель
+.tabs_block {
+  display: none;
+}
+
+// .tabs_block:nth-child(1) {}
+
+.tabs_block:target {
+  display: block;
+}
